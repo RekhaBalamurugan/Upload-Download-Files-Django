@@ -15,7 +15,7 @@ def index(request):
         blob_client = BlobClient.from_connection_string(
         conn_string,
         container_name="blob-container-01",
-        blob_name=f"sample-blob-{str(uuid.uuid4())[0:5]}.jpg",
+        blob_name=uploaded_file.name,
         )   
         blob_client.upload_blob(uploaded_file)
         print(f"Uploaded apple.jpg to {blob_client.url}")
