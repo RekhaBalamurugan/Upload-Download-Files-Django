@@ -8,7 +8,9 @@ conn_string = os.environ["AZURE_STORAGE_CONNECTION_STRING"]
 blob_service_client = BlobServiceClient.from_connection_string(conn_string)
 container_name="blob-container-01"
 # Create your views here.
-local_path = "C:\\Users\\Rekha Balamurugan\\Lexicon\\Azure-Python\\azure_python_upload_download\\downloads"
+
+
+local_path = os.path.join(os.environ['USERPROFILE'], "Downloads")
 def index(request):
     
     if request.method =='POST':
